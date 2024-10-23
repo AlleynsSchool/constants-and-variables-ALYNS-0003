@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: Q1 test test
         setup-command: ''
-        command: pytest ../HW1/hw1_tests.py::test_constantsAndVariables
+        command: pytest /HW1/hw1_tests.py::test_constantsAndVariables
         timeout: 10
         max-score: 2
     - name: Autograding Reporter
