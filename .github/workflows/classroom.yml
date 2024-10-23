@@ -13,18 +13,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Q1
-      id: q1
+    - name: Q1 test test
+      id: q1-test-test
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Q1
+        test-name: Q1 test test
         setup-command: ''
-        command: pytest .\HW1\hw1_tests.py::test_constantsAndVariables
+        command: pytest \HW1\hw1_tests.py::test_constantsAndVariables
         timeout: 10
         max-score: 2
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        Q1_RESULTS: "${{steps.q1.outputs.result}}"
+        Q1-TEST-TEST_RESULTS: "${{steps.q1-test-test.outputs.result}}"
       with:
-        runners: q1
+        runners: q1-test-test
